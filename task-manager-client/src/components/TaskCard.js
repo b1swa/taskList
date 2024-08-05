@@ -17,7 +17,7 @@ const TaskCard = ({ task, handleShow }) => {
   return (
     <Card data-bs-theme="dark">
       <Card.Body>
-        <div class="container">
+        <div className="container">
           <div className="row">
             <div className="col-7 text-white align-content-center text-truncate">
               {task.title}
@@ -26,16 +26,16 @@ const TaskCard = ({ task, handleShow }) => {
               <Button
                 onClick={handleUpdateClick}
                 variant="info"
-                style={{ "border-radius": "75%" }}
+                style={{ borderRadius: "75%" }}
               >
-                <i class="bi bi-pencil-fill"></i>
+                <i className="bi bi-pencil-fill"></i>
               </Button>
               <Button
-                style={{ "border-radius": "75%" }}
+                style={{ borderRadius: "75%" }}
                 onClick={deleteCard}
                 variant="danger"
               >
-                <i class="bi bi-trash3-fill"></i>
+                <i className="bi bi-trash3-fill"></i>
               </Button>
             </div>
           </div>

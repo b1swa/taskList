@@ -1,11 +1,11 @@
 export const fetchTasks = () => async (dispatch) => {
-  const response = await fetch("http://localhost:3000/tasks");
+  const response = await fetch("http://localhost:8000/tasks");
   const data = await response.json();
   dispatch({ type: "FETCH_TASKS", payload: data });
 };
 
 export const createTask = (task) => async (dispatch) => {
-  const response = await fetch("http://localhost:3000/tasks", {
+  const response = await fetch("http://localhost:8000/tasks", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -17,7 +17,7 @@ export const createTask = (task) => async (dispatch) => {
 };
 
 export const updateTask = (id, updates) => async (dispatch) => {
-  const response = await fetch(`http://localhost:3000/tasks/${id}`, {
+  const response = await fetch(`http://localhost:8000/tasks/${id}`, {
     method: "PUT",
     headers: {
       "Content-Type": "application/json",
@@ -29,6 +29,6 @@ export const updateTask = (id, updates) => async (dispatch) => {
 };
 
 export const deleteTask = (id) => async (dispatch) => {
-  await fetch(`http://localhost:3000/tasks/${id}`, { method: "DELETE" });
+  await fetch(`http://localhost:8000/tasks/${id}`, { method: "DELETE" });
   dispatch({ type: "DELETE_TASK", payload: id });
 };

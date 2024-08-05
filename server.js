@@ -3,10 +3,7 @@ import cors from "@fastify/cors";
 import mongoose from "mongoose";
 
 mongoose
-  .connect(process.env.MONGO_DB_URI, {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  })
+  .connect(process.env.MONGO_DB_URI, {})
   .then(() => console.log("MongoDB connected"))
   .catch((err) => console.log(err));
 
@@ -48,7 +45,7 @@ fastify.delete("/tasks/:id", async (request, reply) => {
   reply.send({ message: "Task deleted" });
 });
 
-fastify.listen({ port: 3000 }, (err, address) => {
+fastify.listen({ port: 8000 }, (err, address) => {
   if (err) throw err;
-  console.log(`server listening on port:3000`);
+  console.log(`server listening on port:8000`);
 });

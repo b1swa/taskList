@@ -42,16 +42,18 @@ Ensure you have the following installed:
     npm install
     ```
 
-3. Start the MongoDB server if it is not already running:
+3. Create a .env file
     ```bash
-    mongod
+    touch .env
     ```
+
+    Add your MONGO_DB_URI to .env file
 
 4. Start the Fastify server:
     ```bash
-    node server.js
+    npm start
     ```
-    The server will start on `http://localhost:3000`.
+    The server will start on `http://localhost:8000`.
 
 ### Frontend Setup
 
@@ -70,7 +72,7 @@ Ensure you have the following installed:
 ## Usage
 
 - Open your browser and navigate to `http://localhost:3000`.
-- You will see a list of tasks.
+- You will see a board style list of tasks.
 - You can add a new task using the form.
 - Click on a task to edit it.
 - Click the delete button to remove a task.
@@ -78,11 +80,10 @@ Ensure you have the following installed:
 ## Project Structure
 
 ```plaintext
-task-manager/
+taskList/
 │
 ├── server.js                   # Fastify server setup and route definitions
 ├── models/                     # Mongoose models
-│   └── Task.js
 │
 ├── task-manager-client/        # React frontend
 │   ├── src/
